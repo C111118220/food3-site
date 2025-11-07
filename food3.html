@@ -1,0 +1,67 @@
+<a class="btn primary" href="#menu" aria-label="查看熱門菜單">查看菜單</a>
+<a class="btn ghost" href="tel:0212345678" aria-label="電話訂餐">📞 直接訂餐</a>
+</div>
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&auto=format&fit=crop&q=70" width="1200" height="800" alt="招牌菜" loading="lazy" decoding="async" />
+</div>
+
+
+<section id="menu" aria-labelledby="menu-title">
+<h2 id="menu-title">熱門菜單</h2>
+<div class="grid" role="list">
+<article class="card" role="listitem">
+<h3>雞腿飯 <span class="price">$90</span></h3>
+<p>外皮酥脆、腿肉多汁，配三樣家常小菜。</p>
+</article>
+<article class="card" role="listitem">
+<h3>牛肉麵 <span class="price">$120</span></h3>
+<p>濃郁湯頭、半筋半肉，手工麵條更Q彈。</p>
+</article>
+<article class="card" role="listitem">
+<h3>滷味拼盤 <span class="price">$70</span></h3>
+<p>豆干、海帶、滷蛋與米血，滷汁入味不死鹹。</p>
+</article>
+</div>
+</section>
+
+
+<section id="about" aria-labelledby="about-title">
+<h2 id="about-title">關於我們</h2>
+<p>巷口老店，新鮮現做，每日限量。堅持用料實在、友善待客。</p>
+</section>
+
+
+<section id="contact" aria-labelledby="contact-title">
+<h2 id="contact-title">聯絡 / 訂餐</h2>
+<div class="contact-grid">
+<div class="info">
+<p><strong>電話：</strong><a href="tel:0212345678">02-1234-5678</a></p>
+<p><strong>地址：</strong><a href="https://maps.google.com/?q=台北市好吃路1號" target="_blank" rel="noopener">台北市好吃路 1 號</a></p>
+<p><strong>營業時間：</strong>週一至週六 11:00–20:00（週日公休）</p>
+</div>
+<div class="info" aria-label="快速訂餐小提示">
+<h3 style="margin-top:0">快速訂餐小技巧</h3>
+<ol style="margin:0;padding-left:18px">
+<li>先在電話說明餐點與取餐時間。</li>
+<li>到店報電話後 3–5 分鐘可取餐。</li>
+<li>尖峰時段建議提早 20 分鐘。</li>
+</ol>
+</div>
+</div>
+</section>
+</main>
+
+
+<footer>© <span id="y"></span> 小吃站</footer>
+<script>
+const y=document.getElementById('y'); y.textContent=new Date().getFullYear();
+// 設定導覽列的 aria-current
+document.querySelectorAll('.menu a').forEach(a=>{
+a.addEventListener('click',()=>{
+document.querySelectorAll('.menu a').forEach(x=>x.removeAttribute('aria-current'));
+a.setAttribute('aria-current','page');
+const cb=document.getElementById('menu-toggle'); if(cb) cb.checked=false; // 手機點選後自動收合
+});
+});
+</script>
+</body>
+</html>
